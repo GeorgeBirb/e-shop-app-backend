@@ -28,6 +28,9 @@ namespace EshopAPI.Controllers
             {
                 EshopUserController eshopUserController = new EshopUserController(_context, _configuration);
                 review.CustomerNavigation = eshopUserController.GetByEshopUserId(review.Customer);
+
+                ProductController productController = new ProductController(_context, _configuration);
+                review.ProductNavigation = productController.GetByProductId(review.Product);
             }
             return new JsonResult(reviews);
         }
