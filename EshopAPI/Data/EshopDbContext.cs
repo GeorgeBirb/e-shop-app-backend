@@ -5,13 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EshopAPI.Data;
 
-public partial class EshopDbv2Context : DbContext
+public partial class EshopDbContext : DbContext
 {
-    public EshopDbv2Context()
-    {
-    }
-
-    public EshopDbv2Context(DbContextOptions<EshopDbv2Context> options)
+    public EshopDbContext(DbContextOptions<EshopDbContext> options)
         : base(options)
     {
     }
@@ -42,9 +38,10 @@ public partial class EshopDbv2Context : DbContext
 
     public virtual DbSet<ShopCategory> ShopCategories { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=.; Database=EshopDBv2; User Id=<DESKTOP-7JTCESD\\PX>; Integrated Security=true; Encrypt=false");
+//     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+// #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//         => optionsBuilder.UseSqlServer(
+//             "Server=.; Database=EshopDBv2; User Id=<DESKTOP-7JTCESD\\PX>; Integrated Security=true; Encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
