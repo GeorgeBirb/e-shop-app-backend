@@ -10,6 +10,7 @@ Run `sql/initialize-db.sql` with your mysql client
 
 Run these commands
 ```
+dotnet tool install --global dotnet-ef
 cd EshopAPI
 dotnet ef database update
 ```
